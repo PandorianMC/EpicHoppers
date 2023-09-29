@@ -10,7 +10,6 @@ import com.songoda.epichoppers.hopper.Hopper;
 import com.songoda.epichoppers.settings.Settings;
 import com.songoda.epichoppers.utils.Methods;
 import com.songoda.epichoppers.utils.StorageContainerCache;
-import com.songoda.ultimatestacker.UltimateStacker;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -150,9 +149,7 @@ public class ModuleSuction extends Module {
     }
 
     private int getActualItemAmount(Item item) {
-        if (ultimateStacker) {
-            return com.songoda.ultimatestacker.utils.Methods.getActualItemAmount(item);
-        } else if (wildStacker)
+        if (wildStacker)
             return WildStackerAPI.getItemAmount(item);
         else
             return item.getItemStack().getAmount();
@@ -160,9 +157,7 @@ public class ModuleSuction extends Module {
     }
 
     private void updateAmount(Item item, int amount) {
-        if (ultimateStacker) {
-            UltimateStacker.updateItemAmount(item, item.getItemStack(), amount);
-        } else if (wildStacker)
+        if (wildStacker)
             WildStackerAPI.getStackedItem(item).setStackAmount(amount, true);
         else
             item.getItemStack().setAmount(Math.min(amount, item.getItemStack().getMaxStackSize()));

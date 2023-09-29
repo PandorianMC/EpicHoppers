@@ -2,7 +2,6 @@ package com.songoda.epichoppers.containers;
 
 import com.songoda.epichoppers.EpicHoppers;
 import com.songoda.epichoppers.containers.impl.AdvancedChestImplementation;
-import com.songoda.epichoppers.containers.impl.EpicFarmingImplementation;
 import com.songoda.epichoppers.containers.impl.FabledSkyBlockImplementation;
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
@@ -22,7 +21,6 @@ public class ContainerManager {
         this.customContainers = new HashSet<>();
 
         registerCustomContainerImplementation("AdvancedChests", new AdvancedChestImplementation());
-        registerCustomContainerImplementation("EpicFarming", new EpicFarmingImplementation());
         registerCustomContainerImplementation("FabledSkyBlock", new FabledSkyBlockImplementation());
     }
 
